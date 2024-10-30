@@ -5,9 +5,16 @@ let email = document.getElementById('email');
 let phone = document.getElementById('phone');
 let jobtitle = document.getElementById('job-title');
 let feedback = document.getElementById('feedback');
-let section = document.getElementById('section4');
+let section4 = document.getElementById('section4');
 let gender = document.getElementById('form-gender');
-
+let section1 = document.getElementById('section1');
+let allinputs = document.querySelectorAll('input');
+let nextbtn = document.getElementById('nextbtn');
+let nextbtn2 = document.getElementById('nextbtn2');
+let nextbtn3 = document.getElementById('nextbtn3');
+let validerbtn = document.getElementById('valider');
+let validerbtn2 = document.getElementById('valider2');
+let validerbtn3 = document.getElementById('valider3');
 
 
 function showSection(sectionNumber) {
@@ -16,6 +23,7 @@ function showSection(sectionNumber) {
 }
 
 function nextSection(sectionNumber) {
+
     showSection(sectionNumber);
 }
 
@@ -29,7 +37,54 @@ function backTO()
     alert("Form submitted successfully!");
     document.getElementById("multiSectionForm").reset(); // Reset form field
     showSection(1); // Reset to the first section
+    location.reload();
 }
+
+
+validerbtn.addEventListener('click', ()=>
+{
+    if(firstnome.value.trim() == '' || lastnome.value.trim() == '' || age.value.trim() == '' || age.value >100 || age.value < 18 || gender.value == '')
+        {
+            nextbtn.classList.add("d-none");
+        }
+        else
+        {
+            nextbtn.classList.remove("d-none");
+        }
+}
+)
+validerbtn2.addEventListener('click', ()=>
+{
+    if(email.value.trim() == '' || phone.value.trim() == '' || jobtitle.value.trim() == '')
+        {
+            nextbtn2.classList.add("d-none");
+        }
+        else
+        {
+            nextbtn2.classList.remove("d-none");
+        }
+}
+)
+validerbtn3.addEventListener('click', ()=>
+{
+    if(feedback.value.trim() == '')
+        {
+            nextbtn3.classList.add("d-none");
+        }
+        else
+        {
+            nextbtn3.classList.remove("d-none");
+        }
+}
+)
+
+
+
+
+
+
+
+
 
 
 let information = [];
@@ -49,14 +104,12 @@ function submitForm(event) {
 }
     event.preventDefault(); 
     information.push(objectUser)
-    console.log(information[0]);
+localStorage.setItem("nome" , objectUser)
 
-
-
-    section.innerHTML = `                   
+    section4.innerHTML = `                   
                     <div class="conatainer border my-5 ">
                         <div class="row"  style="display: flex; justify-content: center;">
-                            <div class="col-md-5  justify-content-center align-items-center text-center fs-4 fw-bold text-dark mb-3" style="height: 50px; display: flex; border-radius: 5px">First name : ${information[0].firstname} </div>
+                            <div class="col-md-5  justify-content-center align-items-center text-center fs-4 fw-bold text-dark mb-3" style="height: 50px; display: flex; border-radius: 5px">First name : ${information[0].firstname}</div>
                         </div>
                         <div class="row" style="display: flex; justify-content: center;">
                             <div class="col-md-5  justify-content-center align-items-center text-center fs-4 fw-bold text-dark" style="height: 50px; display: flex; border-radius: 5px;">Last name : ${information[0].lastname} </div>
@@ -79,9 +132,9 @@ function submitForm(event) {
                         <div class="row my-3" style="display: flex; justify-content: center;">
                             <div class="col-md-5  justify-content-center align-items-center text-center fs-4 fw-bold text-dark" style="height: 50px; display: flex; border-radius: 5px">Your feedback : ${information[0].feedbackk}</div>
                         </div>
-                        <div class= "row d-flex justify-content-center">
-                                <button type="submit" class="btn btn-primary mt-3 col-md-1" onclick="backTO()">Done</button>
-                        </div>
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-success mt-3 mx-3 my-3 bg-primary" onclick="backTO()">Done</button>
+                    </div>
                     </div>`;
 
 
