@@ -37,21 +37,25 @@
                         <input name="number" type="number" id="age" class="form-control" >
                     </div>
                     <div class="d-flex justify-content-between">
-                        <button type="button" class="btn btn-success mt-3 bg-primary"  id="valider">Valider</button>
+                        <button type="button" class="btn btn-success mt-3 bg-primary"  style="visibility: hidden;" id="valider">Valider</button>
                         <button type="button" class="btn btn-success mt-3 d-none" onclick="nextSection(2)" id="nextbtn">Next</button>
 
                     </div>
+                </div>
+                <div class="section border mt-5 " style="min-height: 30vh; overflow: auto; display: flex; flex-direction: column; justify-content: center ;" id="sectionstorage">
+
+
                 </div>
 
                 <!-- Section 2 -->
                 <div class="section d-none" id="section2">
                     <div class="form-group">
-                        <label for="email">Email:</label>
+                        <label for="email" id="emailmessage">Email:</label>
                         <input name="email" type="email" id="email" class="form-control" >
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone Number:</label>
-                        <input name="phone" type="tel" id="phone" class="form-control" >
+                        <input name="phone" type="number" id="phone" class="form-control" >
                     </div>
                     <div class="form-group">
                         <label for="phone">Job title:</label>
@@ -59,7 +63,7 @@
                     </div>
                     <div class="d-flex justify-content-between">
                         <button type="button" class="btn btn-secondary mt-3" onclick="prevSection(1)">Previous</button>
-                        <button type="button" class="btn btn-success mt-3 bg-primary"  id="valider2">Valider</button>
+                        <button type="button" class="btn btn-success mt-3 bg-primary" style="visibility: hidden;" id="valider2">Valider</button>
                         <button type="button" class="btn btn-success mt-3 d-none" onclick="nextSection(3)" id="nextbtn2">Next</button>
                     </div>
                 </div>
@@ -72,7 +76,7 @@
                     </div>
                     <div class="d-flex justify-content-between">
                         <button type="button" class="btn btn-secondary mt-3" onclick="prevSection(2)">Previous</button>
-                        <button type="button" class="btn btn-success mt-3 bg-primary"  id="valider3">Valider</button>
+                        <button type="button" class="btn btn-success mt-3 bg-primary" style="visibility: hidden;" id="valider3">Valider</button>
                         <button type="submit" class="btn btn-primary mt-3 d-none" onclick="nextSection(4)" id="nextbtn3">Submit</button>
                     </div>
                 </div>
