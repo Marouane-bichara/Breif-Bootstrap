@@ -5,35 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
     <title>Travel With us</title>
-
 </head>
-<body>
+<body style="background-color:rgb(79, 121, 238);" id="body">
     
+    <div class="container mt-4">
+        <div class="row justify-content-end">
+            <button id="changecolor" class=" btn col-1" style="width: 40px; border-radius: 50%; background-color: rgb(34, 34, 34); color: white;">M</button>
+        </div>
+    </div>
 
   <div class="container mt-5">
-    <div class="card">
+    <div class="card" id="card">
         <div class="card-body">
             <h2 class="card-title text-center">Survey Form</h2>
 
             <form id="multiSectionForm" onsubmit="submitForm(event)">
                 <!-- Section 1 -->
+          
+
+                    <div style="border-radius: 50% ; width: 45px; height: 45px; border: 2px solid black; display: flex ; justify-content: center; align-items: center; color: black; background-color: gold;" id="buttonseconds">10</div>
+          
+
                 <div class="section" id="section1">
                     <div class="form-group">
-                        <label for="name">First Name:</label>
+                        <label for="name" class="textbeforinpu" id="labelfirstname">First Name:</label>
                         <input name="name" type="text" id="first-name" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="name">Last name :</label>
+                        <label for="name" class="textbeforinpu" id="labellastname">Last name :</label>
                         <input name="name" type="text" id="last-name" class="form-control" >
                     </div>
-                    <select name="" class="my-4 border border-info rounded p-2" id="form-gender">
+                    <select name="" class="my-4 border border-info rounded p-2 " id="form-gender">
                         <option value="">Select Gender</option>
                         <option value="woman">Woman</option>
-                        <option value="man">Man</option>
+                        <option value="man" >Man</option>
                     </select>
                     <div class="form-group">
-                        <label for="age">Age (Between 18 & 100) :</label>
+                        <label for="age" class="textbeforinpu" id="labelage">Age (Between 18 & 100) :</label>
                         <input name="number" type="number" id="age" class="form-control" >
                     </div>
                     <div class="d-flex justify-content-between">
@@ -49,16 +59,17 @@
 
                 <!-- Section 2 -->
                 <div class="section d-none" id="section2">
+                    <div style="border-radius: 50% ; width: 45px; height: 45px; border: 2px solid black; display: flex ; justify-content: center; align-items: center; color: black; background-color: gold;" id="buttonseconds2">10</div>
                     <div class="form-group">
-                        <label for="email" id="emailmessage">Email:</label>
+                        <label for="email" id="emailmessage" class="textbeforinpu">Email:</label>
                         <input name="email" type="email" id="email" class="form-control" >
                     </div>
                     <div class="form-group">
-                        <label for="phone">Phone Number:</label>
+                        <label for="phone" class="textbeforinpu" id="textnum">Phone Number:</label>
                         <input name="phone" type="number" id="phone" class="form-control" >
                     </div>
                     <div class="form-group">
-                        <label for="phone">Job title:</label>
+                        <label for="phone" class="textbeforinpu" id="textofjobtitle">Job title:</label>
                         <input name="phone" type="text" id="job-title" class="form-control" >
                     </div>
                     <div class="d-flex justify-content-between">
@@ -71,7 +82,7 @@
                 <!-- Section 3 -->
                 <div class="section d-none" id="section3">
                     <div class="form-group">
-                        <label for="feedback">Feedback:</label>
+                        <label for="feedback" class="textbeforinpu">Feedback:</label>
                         <textarea name="feedback" id="feedback" rows="4" class="form-control" ></textarea>
                     </div>
                     <div class="d-flex justify-content-between">
